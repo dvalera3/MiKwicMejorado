@@ -1,5 +1,5 @@
 import Textos.*;
-import es.uned.master.java.basico.KwicException;
+import es.uned.master.java.basico.KwicExceptionPropia;
 
 import java.io.*;
 import java.io.IOException;
@@ -14,7 +14,7 @@ public class Driver {
 	static int indice = 0;   //para acceder al String[]
  
 	private static Scanner reader = new Scanner(System.in);//scaner para recoger datos desde teclado
-	public static void main(String[] arg) throws KwicException,IOException {
+	public static void main(String[] arg) throws KwicExceptionPropia,IOException {
 		//declaracion de variables de la clase principal
 	    //menu
 	    OpcionesGUI og = new OpcionesGUI();
@@ -50,7 +50,8 @@ public class Driver {
 							 	rk.Resultado(noclaves,"src/Textos/frasesvacio.txt"); 
 							 	System.out.println("\n");
 							 	//ficheros sin datos
-					    	    System.out.println(new KwicException(222).getMessage());
+							 	
+					    	    System.out.println(new KwicExceptionPropia().getMessage(222));
 					    	    
 				     }if(numero==3)  {
 				    	        System.out.println("\n");
@@ -80,7 +81,7 @@ public class Driver {
 				     }else if(numero>5 || numero<1){
 				    	       // reader.close();
 				    	        System.out.println("\n");
-				    	        System.out.println(new KwicException(111).getMessage());
+				    	        System.out.println(new KwicExceptionPropia().getMessage(111));
 					 }  
 	   }while(ok);		
 	    

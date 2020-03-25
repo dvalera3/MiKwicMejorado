@@ -1,19 +1,17 @@
 
 import java.io.*;
 import java.net.URL;
-import java.net.MalformedURLException;
-
-import es.uned.master.java.basico.KwicException;
+import es.uned.master.java.basico.KwicExceptionPropia;
 import es.uned.master.java.coleccion.Kwic;
  
 
 /**
- * @author d¡ego valera garcia
+ * @author d¡ego valera hernandez
  *
  */
 
   //clase que presenta por consola el resultado de la ejecucion de la aplicacion
-public class ResultadoKwic {
+public class ResultadoKwic   {
 	 
 	//declaracion de variables de la clase principal
 	 String frases; 
@@ -25,16 +23,18 @@ public class ResultadoKwic {
 	/**
 	 * metodo que devuelve el resultado de la accion de leer los ficheros
 	 * de texto noclaves y frases
-	 * @param noclaves contenido del string noclaves, ruta path del fichero que se crea 
+	 * @param noclaves contenido del string noclaves, 
+	 * @param ruta path del fichero que se crea 
 	 */   
-	public void Resultado(String noclaves,String ruta) throws MalformedURLException {
+	public void Resultado(String noclaves,String ruta)  {
  		FileReader reader = null;
     	BufferedReader br = null;
     	File fileaux;     
     	//tratamos excepcion si fichero es null
       if(noclaves==null || ruta == null) {
+    	 KwicExceptionPropia ex = new KwicExceptionPropia();
     	 System.out.println("\n");
- 	     System.out.println(new KwicException(444).getMessage());
+ 	     System.out.println(ex.getMessage(444));
  	     System.out.println("\n");
       }else {
          try  {

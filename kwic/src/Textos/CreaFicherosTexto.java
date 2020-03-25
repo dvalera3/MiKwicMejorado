@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-import es.uned.master.java.basico.KwicException;
+import es.uned.master.java.basico.KwicExceptionPropia;
 
 import java.io.BufferedWriter;
 
@@ -27,7 +27,8 @@ public class CreaFicherosTexto {
   /**
     * metodo que recibe la ruta el path, y el fichero file si no existe lo crea
     * con contenido vacio
-    * @param ruta paht del fichero file fichero a crear
+    * @param ruta paht del fichero 
+    * @param file fichero a crear
    */
 	public void CreaFicherosVacios(String ruta,File file) {
 		String contenido = "";
@@ -48,14 +49,13 @@ public class CreaFicherosTexto {
 		}
 	}
 	
-	 /**
-	    * metodo que devuelve el nombre un array con los nombres de los ficheros
-	    * hemos introducido por teclado
-	    * @param mensaje, indica el nombre o ruta del fichero que deseamos incorporar a la aplicacion y que
-	    * se indican por consola, estos son los ficheros noclaves y frases, son los nombres que el proyecto 
-	    * les ha asociado
-	    * nos pide el nombre del fichero noclaves y despues el de frases
-	  */
+	 
+	  //String mensaje, indica el nombre o ruta del fichero que deseamos incorporar a la aplicacion
+	  //String[] miarray estructura de dos elementos del tipo string que albergan los nombres
+	  //metodo que devuelve el nombre un array con los nombres de los ficheros
+	  //hemos introducido por teclado
+	  //nos pide el nombre del fichero noclaves y despues el de frase
+	  //de los ficheros noclaves y frases respectivamente
 	 public String[] FicheroUsuario(String mensaje)  {
 		    String[] miarray = new String[2]; //array devuelta con los nombres de los ficheros
 		    System.out.println("\n");
@@ -64,7 +64,7 @@ public class CreaFicherosTexto {
 		    File fileaux = new File(nombreficheronoclaves);
 		       if(fileaux.getAbsolutePath()==null){
 		    	   System.out.println("\n");
-		   	       System.out.println(new KwicException(555).getMessage()); //fichero no existe
+		   	       System.out.println(new KwicExceptionPropia().getMessage(555)); //fichero no existe
 		   	       System.out.println("\n");
 		       }else {	    	    
 		    	    miarray[indice]=nombreficheronoclaves;
@@ -73,7 +73,7 @@ public class CreaFicherosTexto {
 				    File fil= new File(nombreficherofrases);
 				       if(fil.getAbsolutePath()==null){
 				    	   System.out.println("\n");
-				   	       System.out.println(new KwicException(555).getMessage());
+				   	       System.out.println(new KwicExceptionPropia().getMessage(555));
 			               System.out.println("\n");
 				       }else {
 				    	   indice++;

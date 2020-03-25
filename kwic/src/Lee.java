@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.URL;
-import es.uned.master.java.basico.KwicException;
+import es.uned.master.java.basico.KwicExceptionPropia;
 
 /**
  * @author d¡ego valera hernandez
@@ -22,7 +22,7 @@ import es.uned.master.java.basico.KwicException;
              //tratamos excepcion si es fichero null
 	   if(file==null) {
 	    	 System.out.println("\n");
-	 	     System.out.println(new KwicException(333).getMessage());
+	 	     System.out.println(new KwicExceptionPropia().getMessage(333));
 	 	     System.out.println("\n");
 	   }else {  
 	        try {    

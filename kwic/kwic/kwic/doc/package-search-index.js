@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"es.uned.master.java.basico"},{"l":"es.uned.master.java.coleccion"},{"l":"test"}]
