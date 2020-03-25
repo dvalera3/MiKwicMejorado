@@ -18,8 +18,7 @@ public class ResultadoKwic   {
 	 Kwic kwic= new Kwic();  //instancia kwic de la clase Kwic para realizar llamadas a sus metodos
 	 //constructor vacio 
 	public ResultadoKwic()  {}
-		
-		 
+			 
 	/**
 	 * metodo que devuelve el resultado de la accion de leer los ficheros
 	 * de texto noclaves y frases
