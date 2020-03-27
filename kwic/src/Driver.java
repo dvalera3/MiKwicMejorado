@@ -12,7 +12,8 @@ import java.util.Scanner; //Importación del código de la clase Scanner desde la 
 public class Driver {
 	static int numero = -1;  //para seleccionar opcion
 	static int indice = 0;   //para acceder al String[]
- 
+//	static String so = System.getProperty("os.name"); 
+	static String separador = System.getProperty("file.separator"); 
 	private static Scanner reader = new Scanner(System.in);//scaner para recoger datos desde teclado
 	public static void main(String[] arg) throws KwicExceptionPropia,IOException {
 		//declaracion de variables de la clase principal
@@ -23,12 +24,16 @@ public class Driver {
 	    //variable para condicion  ejecutar el bucle
 	    boolean ok = true;
 	    CreaFicherosVacios(); //creamos ficheros vacios
+	     
 	    String noclaves=null;
-	     	
+	    String rutanoclaves = "src" + File.separator + "Textos" + File.separator + "noclaves.txt";	
+	    String rutafrases = "src" + File.separator + "Textos" + File.separator + "frases.txt";
+	    String rutanoclavesvacio = "src" + File.separator + "Textos" + File.separator + "noclaves.txt";	
+	    String rutafrasesvacio = "src" + File.separator + "Textos" + File.separator + "frases.txt";
 	    
 			//Mientras ok sea true, preguntamos al usuario
 	    do{
-				 
+			//	 System.out.println(rutafrases);
 					    //muestra el menu
 					 og.Opciones();	
 					 //reader = new Scanner(System.in); 
@@ -39,18 +44,19 @@ public class Driver {
 				    	        System.out.println("\n");
 				    	        Lee lee = new Lee();
 								rk =  new ResultadoKwic();
-								noclaves = lee.LeeFrase("src/Textos/noclaves.txt");
-						    	rk.Resultado(noclaves,"src/Textos/frases.txt"); 
-			                   
+								//noclaves = lee.LeeFrase("src/Textos/noclaves.txt");
+						    	//rk.Resultado(noclaves,"src/Textos/frases.txt"); 
+						    	noclaves = lee.LeeFrase(rutanoclaves);
+						    	rk.Resultado(noclaves,rutafrases); 
+						  
 				     }if(numero==2)  {
 								System.out.println("\n");
 								Lee lee = new Lee();
 								rk =  new ResultadoKwic();
-								noclaves = lee.LeeFrase("src/Textos/noclavesvacio.txt");
-							 	rk.Resultado(noclaves,"src/Textos/frasesvacio.txt"); 
+								noclaves = lee.LeeFrase(rutanoclavesvacio);
+							    rk.Resultado(noclaves,rutafrasesvacio); 
 							 	System.out.println("\n");
-							 	//ficheros sin datos
-							 	
+							 	//ficheros sin datos							 	
 					    	    System.out.println(new KwicExceptionPropia().getMessage(222));
 					    	    
 				     }if(numero==3)  {

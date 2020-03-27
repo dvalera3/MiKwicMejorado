@@ -19,6 +19,8 @@ public class CreaFicherosTexto {
 	//al declararlo en la clase, es ella la encargada de cerrar el scanner cuando salgamos
 	static Scanner reader = new Scanner(System.in); //reader para recoger el nombre de los ficheros por teclado
 	static int indice = 0;  //para acceder a la poscion del array que contiene el nombre de los ficheros
+	//static String so = System.getProperty("os.name"); 
+	//static String separador = System.getProperty("file.separator"); 
   /**
     *constructor vacio
   */
@@ -66,7 +68,8 @@ public class CreaFicherosTexto {
 		    	   System.out.println("\n");
 		   	       System.out.println(new KwicExceptionPropia().getMessage(555)); //fichero no existe
 		   	       System.out.println("\n");
-		       }else {	    	    
+		       }else {	
+		    	  while(indice<1) {
 		    	    miarray[indice]=nombreficheronoclaves;
 		    	    System.out.println("Introduzca el nombre del fichero frases. ");	
 					String nombreficherofrases = reader.nextLine();
@@ -79,6 +82,7 @@ public class CreaFicherosTexto {
 				    	   indice++;
 				    	   miarray[indice]=nombreficherofrases; 
 				       }
+		    	  }
 		       }
 			 
 			return miarray;
