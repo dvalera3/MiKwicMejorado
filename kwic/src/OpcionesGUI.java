@@ -21,7 +21,7 @@ public class OpcionesGUI {
 		System.out.println();
 		System.out.println("3. ");  //Se carga fichero a null
 		System.out.println();
-		System.out.println("4. Introduzca nombre del fichero noclaves y frases. ");  //Se carga fichero a null
+		System.out.println("4. Introduzca nombre del fichero noclaves y frases. ");  //carga ficheros cerados por el usuario
 		System.out.println();
 		System.out.println("5. Salir.    "); //sale de la aplicacion
 		System.out.println();

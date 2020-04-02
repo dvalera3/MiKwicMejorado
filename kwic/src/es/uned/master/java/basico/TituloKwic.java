@@ -1,5 +1,7 @@
 package es.uned.master.java.basico;
+
 import java.util.*;
+import es.uned.master.java.basico.KwicExceptionPropia;
 
       //la clase TituloKwic implementa ITituloKwic
 public class TituloKwic implements Comparable<TituloKwic>,ITituloKwic{
@@ -31,8 +33,9 @@ public class TituloKwic implements Comparable<TituloKwic>,ITituloKwic{
 			TituloKwic tk= (TituloKwic) o;
 			return this.tk.equals(tk.toString());
 		}else{
-			throw new KwicException("No es un TituloKwic");
+			System.out.println(new KwicExceptionPropia().getMessage(666)); //No es un titulokwic
 		}
+		return  false;
 	}
 	
 	

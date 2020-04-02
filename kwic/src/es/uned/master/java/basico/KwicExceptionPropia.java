@@ -43,7 +43,10 @@ public class KwicExceptionPropia extends Exception {
 	            case 555:
 	            	 mensaje="Error, no es una ruta valida o no existe el fichero";
 	            	 break;   
-	        }      
+	            case 666:
+	            	 mensaje="Error, no es un TituloKwic";
+	            	 break;   
+	        }   
 	         
 	   return mensaje;
 	}         

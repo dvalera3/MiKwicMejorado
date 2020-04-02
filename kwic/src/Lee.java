@@ -1,5 +1,5 @@
 import java.io.*;
-import java.net.URL;
+//import java.net.URL;
 import es.uned.master.java.basico.KwicExceptionPropia;
 
 /**
@@ -16,41 +16,31 @@ import es.uned.master.java.basico.KwicExceptionPropia;
 	   * metodo que devuelve un string despues de aver leido un fichero .txt
 	   * @param file ruta del fichero si no existe lo crea en la ruta especificada
      */
-    public String LeeFrase(String file) {
-	   FileReader entrada;
-	   File fileaux;
-             //tratamos excepcion si es fichero null
-	   if(file==null) {
-	    	 System.out.println("\n");
-	 	     System.out.println(new KwicExceptionPropia().getMessage(333));
-	 	     System.out.println("\n");
-	   }else {  
+    public String LeeFrase(File file) throws IOException{
+	  
+	   if(file==null){		   
+		   System.out.println("\n");
+	 	   System.out.println(new KwicExceptionPropia().getMessage(333));
+	 	   System.out.println("\n");
+	   }else {		  
+	      boolean ok = file.createNewFile(); 
+	      
+	      if(ok) { 
 	        try {    
-	        	//comprobamos que el fichero exista  
-		       fileaux = new File(file);
-		       if(!fileaux.exists()){
-		         System.out.println("Voy a buscar el fichero ubicado en la ruta parcial  "+file);
-		         URL url = getClass().getClassLoader().getResource(file);
-		         fileaux = new File(url.getFile());
-		         entrada = new FileReader(fileaux);
-		         
-		       }else {
-		          entrada=new FileReader(file);	 
-		       }
-		        	 //leemos el fichero caracter a caracter y formamos texto	       
+	           InputStream input = getClass().getResourceAsStream(file.getAbsolutePath());
+		      	//leemos el fichero caracter a caracter y formamos texto	       
 	           int c=0;
 	           while(c!=-1) {
-	            	c=entrada.read();
+	            	c=input.read();
                     char letra=(char)c;
-	                texto+=letra;
-	           }
-	          
-		       entrada.close();	
+	                texto+=letra;       
+		       } input.close();	
 		   
 	        } catch (IOException e) {
 	            System.out.println("No se ha encontrado el archivo"+e);
 	        }
-	   }
+	      }
+	   }  
 	   
 	  return texto;	   
    }	
